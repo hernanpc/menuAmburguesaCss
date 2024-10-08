@@ -1,0 +1,100 @@
+/* Reseteo de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Contenedor del menú */
+.menu {
+    position: relative;
+}
+
+/* Estilo del botón del menú (hamburger icon) */
+.menu-toggle {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.hamburger {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Crear las líneas del icono de "hamburger" */
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Posicionamos las líneas superior e inferior */
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Ocultamos las opciones del menú por defecto */
+.menu-items {
+    display: none;
+    list-style-type: none;
+    margin-top: 10px;
+    text-align: left;
+}
+
+/* Estilo de los enlaces del menú */
+.menu-items li {
+    margin: 10px 0;
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 8px 16px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambiar el color del fondo al pasar sobre los enlaces */
+.menu-items a:hover {
+    background-color: #ddd;
+}
+
+/* Mostrar el menú con la clase "active" */
+.menu-items.active {
+    display: block;
+    animation: slideIn 0.5s ease-out; /* Aquí aplicamos la animación */
+}
+
+/* Animación del menú deslizante */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
